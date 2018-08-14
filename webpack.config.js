@@ -13,13 +13,13 @@ module.exports = [{
   mode: minimize ? 'production' : 'development',
   devtool: 'source-map',
   entry: {
-    'coveo.extension': path.resolve(__dirname,'./src/Index')
+    'coveo.topviews': path.resolve(__dirname,'./src/Index')
   },
   output: {
     path: require('path').resolve('./bin/js'),
     // Output a filename based on the entry. This will generate a "coveo.extension.js" file.
     filename: minimize ? `[name].min.js` : `[name].js`,
-    library: 'CoveoExtension'
+    library: 'CoveoTopViews'
   },
   externals: [{
     // Defines the module "coveo-search-ui" as external, "Coveo" is defined in the global scope. 

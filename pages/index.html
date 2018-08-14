@@ -11,13 +11,13 @@
     <script src="js/templates/templates.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', function () {
-        Coveo.SearchEndpoint.configureSampleEndpointV2();
+        Coveo.SearchEndpoint.configureCloudEndpoint("sitecorecommercedemo", "SEARCH_TOKEN");
         Coveo.init(document.body);
       })
     </script>
   </head>
   <body id="search" class='CoveoSearchInterface' data-enable-history="true">
-    <div class="CoveoHelloWorld"></div>
+    <div class="CoveoAnalytics"></div>
     <div class="coveo-tab-section">
       <a class="CoveoTab" data-id="All" data-caption="All Content"></a>
     </div>
@@ -25,7 +25,7 @@
       <div class="CoveoSettings"></div>
       <div class="CoveoSearchbox" data-enable-omnibox="true"></div>
     </div>
-    <div class="coveo-main-section">
+    <div class="coveo-main-section coveo-recommendation-main-section">
       <div class="coveo-facet-column">
         <div class="CoveoFacet" data-title="Type" data-field="@objecttype" data-tab="All"></div>
         <div class="CoveoFacet" data-title="FileType" data-field="@filetype" data-tab="All"></div>
@@ -33,7 +33,7 @@
         <div class="CoveoFacet" data-title="Year" data-field="@year" data-tab="All"></div>
         <div class="CoveoFacet" data-title="Month" data-field="@month" data-tab="All"></div>
       </div>
-      <div class="coveo-results-column">
+      <div class="coveo-results-column coveo-recommendation-results-column">
         <div class="CoveoShareQuery"></div>
         <div class="CoveoExportToExcel"></div>
         <div class="CoveoPreferencesPanel">
@@ -62,6 +62,9 @@
         <div class="CoveoPager"></div>
         <div class="CoveoLogo"></div>
         <div class="CoveoResultsPerPage"></div>
+      </div>
+      <div class="coveo-recommendation-column">
+        <div class="CoveoTopViews" data-api-key="ANALYTICS_READ_TOKEN"></div>
       </div>
     </div>
   </body>
