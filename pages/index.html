@@ -17,7 +17,19 @@
     </script>
   </head>
   <body id="search" class='CoveoSearchInterface' data-enable-history="true">
-    <div class="CoveoHelloWorld"></div>
+    <span class="CoveoTemplatedFacet" data-field="@objecttype" data-result-container=".coveo-tab-section">
+      <script type="text/x-underscore-template">
+        <a class="CoveoTab"
+          data-id="dynamic_<%= field.value %>"
+          data-caption=" "
+          data-expression="<%= originalField %>==<%= field.value %>">
+            <div style="position: relative;">
+                <%= field.value %>
+              <span style="position: absolute; right: 0px; top: 15px; font-size: 10px;">(<%= field.numberOfResults %>)</span>
+            </div>
+          </a>
+      </script>
+    </span>
     <div class="coveo-tab-section">
       <a class="CoveoTab" data-id="All" data-caption="All Content"></a>
     </div>
